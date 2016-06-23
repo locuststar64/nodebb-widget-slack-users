@@ -15,6 +15,9 @@
         "nodebb",
         "widget"
     ],
+    "nbbpm": {
+        "compatibility": "^1.0.3"
+    },
     "author": "sunsetbrew",
     "license": "MIT",
     "bugs": {
