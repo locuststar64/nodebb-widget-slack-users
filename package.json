@@ -1,0 +1,25 @@
+{
+    "name": "nodebb-widget-slack-users",
+    "version": "0.1.0",
+    "description": "Slack users widget",
+    "main": "library.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sunsetbrew/nodebb-widget-slack-users.git"
+    },
+    "keywords": [
+        "slack",
+        "nodebb",
+        "widget"
+    ],
+    "author": "sunsetbrew",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sunsetbrew/nodebb-widget-slack-users/issues"
+    },
+    "homepage": "https://github.com/sunsetbrew/nodebb-widget-slack-users",
+    "dependencies": {}
+}

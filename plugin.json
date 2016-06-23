@@ -1,0 +1,21 @@
+{
+    "id": "nodebb-widget-slack-users",
+    "name": "NodeBB Slack users widget",
+    "description": "This plugin allows for a widget to be created which shows the active users on a Slack server.",
+    "url": "https://github.com/pitaj/nodebb-widget-slack-users",
+    "library": "library.js",
+    "staticDirs": {
+        "public": "public"
+    },
+    "hooks": [{
+        "hook": "filter:widgets.getWidgets",
+        "method": "defineWidget"
+    }, {
+        "hook": "filter:widget.render:slackusers",
+        "method": "renderSlackUsersWidget"
+    }],
+    "css": [
+        "public/style.css"
+    ],
+    "templates": "public/templates"
+}
