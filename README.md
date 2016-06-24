@@ -1,4 +1,4 @@
-#nodebb-widget-teamspeak
+#nodebb-widget-slack-users
 
 This plugin for NodeBB allows people to put a configurable widget on their website which shows their Slack server's details.
 
