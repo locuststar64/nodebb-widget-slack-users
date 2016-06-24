@@ -1,0 +1,9 @@
+{
+    "notoken": "Slack token was not configured in the widget.",
+    "name": "Slack Users",
+    "description": "Displays a list of active slack users.",
+    "requesterror": "Request error:",
+    "requestfailed": "Slack request failed:",
+    "slacktoken": "Slack token:",
+    "enterslacktoken": "Enter Slack token."
+}

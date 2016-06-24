@@ -17,5 +17,6 @@
     "css": [
         "public/style.css"
     ],
-    "templates": "public/templates"
+    "templates": "public/templates",
+    "languages": "languages"
 }

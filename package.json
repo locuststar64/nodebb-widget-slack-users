@@ -1,28 +1,38 @@
 {
-    "name": "nodebb-widget-slack-users",
-    "version": "0.1.2",
-    "description": "Slack users widget",
-    "main": "library.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/sunsetbrew/nodebb-widget-slack-users.git"
-    },
-    "keywords": [
-        "slack",
-        "nodebb",
-        "widget"
-    ],
-    "nbbpm": {
-        "compatibility": "^1.0.3"
-    },
-    "author": "sunsetbrew",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/sunsetbrew/nodebb-widget-slack-users/issues"
-    },
-    "homepage": "https://github.com/sunsetbrew/nodebb-widget-slack-users",
-    "dependencies": {}
+  "name": "nodebb-widget-slack-users",
+  "version": "0.1.3",
+  "description": "Slack users widget",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunsetbrew/nodebb-widget-slack-users.git"
+  },
+  "keywords": [
+    "slack",
+    "nodebb",
+    "widget"
+  ],
+  "nbbpm": {
+    "compatibility": "^1.0.3"
+  },
+  "author": {
+    "name": "sunsetbrew"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunsetbrew/nodebb-widget-slack-users/issues"
+  },
+  "homepage": "https://github.com/sunsetbrew/nodebb-widget-slack-users",
+  "dependencies": {
+    "handlebars": ">=4.0.5"
+     },
+  "readme": "#nodebb-widget-teamspeak\n\nThis plugin for NodeBB allows people to put a configurable widget on their website which shows their Slack server's details.\n\n##Installation\n\nTwo options:\n\n 1.  Install the plugin through the ACP (if it ever gets added to the list *cough cough*)\n 2.  Run `npm install nodebb-widget-slack-users` in the root directory of the NodeBB install\n\nDon't forget to restart after installing the plugin. After installing, a new Slack widget should appear next to the rest\n\n##Configuration\nAll one must do is, in the NodeBB Admin area, go to Themes > Widgets, drag the widget wherever you want, and configure the options for the widget.\n\n##Features\n* Show how many users are online in the Teamspeak server\n* Can be themed easily\n* Shows the server info and a click on the title or link will open the Teamspeak server in the client\n* Can show the full channel tree, and users can be themed by server group, and channels can be themed by channel type\n\n## Suggestions? Encountered a Bug?\nPlease submit all feature requests and bugs with the [Issue tracker at Github.](https://github.com/sunsetbrew/nodebb-widget-slack-users/issues) Thanks\n",
+  "readmeFilename": "README.md",
+  "gitHead": "ed5394107261889b824ad4e729ac9d5a0a91fb79",
+  "_id": "nodebb-widget-slack-users@0.1.2",
+  "_shasum": "7bd5337dafcc8d3eb46bb874c334e410bf7ec6c4",
+  "_from": "nodebb-widget-slack-users@latest"
 }
