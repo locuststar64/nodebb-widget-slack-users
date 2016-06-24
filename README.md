@@ -16,7 +16,8 @@ All one must do is, in the NodeBB Admin area, go to Themes > Widgets, drag the w
 
 ## Get a Slack token
 
-In Slack, go to 
+In Slack
+
 1. Go to
   * Apps
   * Manage (top of page)
