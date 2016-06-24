@@ -33,7 +33,7 @@ In Slack
 
 ## Tips
 * Enable scrolling in the widget container by setting style to something lile `max-height:400px;overflow-y:auto`.
-* Add a link to you Slack by adding the it to the container.  Example below.
+* Add a link to you Slack by adding it to the container.  Example below.
 ```html
 <div class="panel panel-default">
   <div class="panel-heading">
