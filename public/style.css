@@ -1,6 +1,7 @@
 .slackusers-module {
-  box-shadow: 0 1px 10px rgba(0,0,0,.15);
-  background: #f7f7f7;
   padding: 10px;
-  border-bottom: 1px solid #e9e9e9;
+}
+
+.slackusers-module ul {
+	list-style-type: none;
 }

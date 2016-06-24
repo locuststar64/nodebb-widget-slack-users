@@ -8,34 +8,20 @@
     var handlebars = require('handlebars');
     var translator = require.main.require('./public/src/modules/translator');
 
-	var prepError = Handlebars.compile(fs.readFileSync("./public/templates/errors.tpl"));
-   
-    
-     var prepError2 = function(message) {
-                var markup = '<div class="slackusers-module">';
-                 markup = '<div class="slackusers-module-error">';
-                 markup += message;
-                 markup += '</div>';
-                 markup += '</div>';
-	return markup;
-    };
-     var prepNoUser = function(message) {
-                var markup = '<div class="slackusers-module">';
-                 markup = '<div class="slackusers-module-nouser">';
-                 markup += message;
-                 markup += '</div>';
-                 markup += '</div>';
-	return markup;
-    };
+    var errorTemplate = handlebars.compile("" + fs.readFileSync("./public/templates/errors.tpl"));
+    var nousersTemplate = handlebars.compile("" + fs.readFileSync("./public/templates/nousers.tpl"));
+    var listTemplate = handlebars.compile("" + fs.readFileSync("./public/templates/list.tpl"));
 
     module.renderSlackUsersWidget = function(widget, callback) {
         var token = widget.data.token;
-	var cb = callback;
+        var cb = callback;
 
         if (!token) {
-		translator.translate('[[slackusers:notoken]]', function(translated) {
-            		cb(null, prepError(translated));
-		});
+            translator.translate('[[slackusers:notoken]]', function(translated) {
+                cb(null, errorTemplate({
+                    message: translated
+                }));
+            });
             return;
         }
 
@@ -60,54 +46,61 @@
                 var data = JSON.parse(body);
 
                 if (!data.ok) {
-		translator.translate('[[slackusers:requestfailed]]', function(translated) {
-            		cb(null, prepError(translated  + ' ' + data.error));
-		});
+                    translator.translate('[[slackusers:requestfailed]]', function(translated) {
+                        cb(null, errorTemplate({
+                            message: translated + ' ' + data.error
+                        }));
+                    });
                     return;
                 }
                 data.members.forEach(member => {
                     if (member.presence == 'active') {
-                        online.push(member.name);
+                        online.push({
+                            name: member.name
+                        });
                     }
                 });
 
                 if (online.length == 0) {
-                    cb(null, prepNoUsers("No active users."));
+                    translator.translate('[[slackusers:nousers]]', function(translated) {
+                        cb(null, nousersTemplate({
+                            message: translated
+                        }));
+                    });
                     return;
                 }
 
-                var markup = '<div class="slackusers-module"><ul>';
-                online.forEach(name => {
-                    markup += '<li>' + name + '</li>';
-                });
-                markup += '</ul></div>';
-                cb(null, markup);
+                cb(null, listTemplate({
+                    users: online
+                }));
 
             });
         };
 
         // Make a request to the server
         var req = http.request(options, requestCallback);
-	req.on('error', (e) => {
-		translator.translate('[[slackusers:requesterror]]', function(translated) {
-            		cb(null, prepError(translated  + ' ' + data.error));
-		});
-	});
+        req.on('error', (e) => {
+            translator.translate('[[slackusers:requesterror]]', function(translated) {
+                cb(null, errorTemplate({
+                    message: translated + ' ' + e.message
+                }));
+            });
+        });
         req.end();
     };
 
     module.defineWidget = function(widgets, callback) {
-	translator.translate('[[slackusers:name]]', function(name) {
-	translator.translate('[[slackusers:description]]', function(description) {
-        widgets.push({
-            widget: "slackusers",
-            name: name,
-            description: description,
-            content: fs.readFileSync(path.resolve(__dirname, './public/templates/widget.tpl')),
+        translator.translate('[[slackusers:name]]', function(name) {
+            translator.translate('[[slackusers:description]]', function(description) {
+                widgets.push({
+                    widget: "slackusers",
+                    name: name,
+                    description: description,
+                    content: fs.readFileSync(path.resolve(__dirname, './public/templates/widget.tpl')),
+                });
+                callback(null, widgets);
+            });
         });
-        callback(null, widgets);
-	});
-	});
     };
 
 }(module.exports, module));

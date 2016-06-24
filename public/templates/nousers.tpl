@@ -1,1 +1,5 @@
-[[slackusers:slacktoken]] <input type="text" class="form-control" name="token" placeholder="[[slackusers:enterslacktoken]]" />
+<div class="slackusers-module">
+<div class="slackusers-module-nousers">
+{{message}}
+</div>
+</div>
