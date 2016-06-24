@@ -14,7 +14,7 @@ Don't forget to restart after installing the plugin. After installing, a new Sla
 ##Configuration
 All one must do is, in the NodeBB Admin area, go to Themes > Widgets, drag the widget wherever you want, and configure the options for the widget.  You will need to provide the Slack authoization token.
 
-# How to get a Slack token?
+## How to get a Slack token?
 
 In Slack, go to 
 1. Go to
