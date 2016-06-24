@@ -12,7 +12,19 @@ Two options:
 Don't forget to restart after installing the plugin. After installing, a new Slack widget should appear next to the rest
 
 ##Configuration
-All one must do is, in the NodeBB Admin area, go to Themes > Widgets, drag the widget wherever you want, and configure the options for the widget.
+All one must do is, in the NodeBB Admin area, go to Themes > Widgets, drag the widget wherever you want, and configure the options for the widget.  You will need to provide the Slack authoization token.
+
+# How to get a Slack token?
+
+In Slack, go to 
+1. Go to
+  * Apps
+  * Manage (top of page)
+  * Custom Integrations (left column)
+  * Bots
+4. Add Configuration
+  * Enter a user name for the bot.
+  * Grab token on next page
 
 ##Features
 * Show how many users are online in the Teamspeak server
