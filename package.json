@@ -1,6 +1,6 @@
 {
     "name": "nodebb-widget-slack-users",
-    "version": "0.1.5",
+    "version": "0.2.0",
     "description": "Slack users widget",
     "main": "library.js",
     "scripts": {
