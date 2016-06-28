@@ -8,9 +8,9 @@
     var handlebars = require('handlebars');
     var translator = require.main.require('./public/src/modules/translator');
 
-    var errorTemplate = handlebars.compile("" + fs.readFileSync("./public/templates/errors.tpl"));
-    var nousersTemplate = handlebars.compile("" + fs.readFileSync("./public/templates/nousers.tpl"));
-    var listTemplate = handlebars.compile("" + fs.readFileSync("./public/templates/list.tpl"));
+    var errorTemplate = handlebars.compile("" + fs.readFileSync(path.resolve(__dirname, "./private/templates/errors.tpl")));
+    var nousersTemplate = handlebars.compile("" + fs.readFileSync(path.resolve(__dirname, "./private/templates/nousers.tpl")));
+    var listTemplate = handlebars.compile("" + fs.readFileSync(path.resolve(__dirname, "./private/templates/list.tpl")));
 
     module.renderSlackUsersWidget = function(widget, callback) {
         var token = widget.data.token;
@@ -96,7 +96,7 @@
                     widget: "slackusers",
                     name: name,
                     description: description,
-                    content: fs.readFileSync(path.resolve(__dirname, './public/templates/widget.tpl')),
+                    content: fs.readFileSync(path.resolve(__dirname, './private/templates/widget.tpl')),
                 });
                 callback(null, widgets);
             });
